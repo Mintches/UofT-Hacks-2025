@@ -13,8 +13,16 @@
   }
 }
 
+.topbar {
+  background-color: #dbdfe6;
+}
+
+.tab-picker {
+  background-color: #dbdfe6;
+}
+
 .display-wrapper {
-  background-color: #282c34;
+  background-color: #a3aab8;
   min-height: 100vh;
 }
 
