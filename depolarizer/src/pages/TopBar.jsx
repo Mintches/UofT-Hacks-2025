@@ -1,10 +1,15 @@
 import { Button, Typography } from "@mui/material"
-import { useState } from "react"
+import { useState, useContext } from "react"
+import { useNavigate } from "react-router-dom"
 import SignIn from "./SignIn"
+import { UserContext } from "../App";
 
 function TopBar({ children }) {
+    const navigate = useNavigate();
+
     const [signInOpen, setSignInOpen] = useState(false);
-    const [username, setUsername] = useState(null);
+
+    const { username, setUsername } = useContext(UserContext);
     
     return (
         <div className="display-wrapper max-h-lvh w-full flex flex-col">
@@ -26,7 +31,7 @@ function TopBar({ children }) {
                     {(username == null) && <Button
                         className="right-0 h-12"
                         variant="contained"
-                        onClick={() => setSignInOpen(true)}
+                        onClick={() => navigate("/sign-in")}
                     >
                         Sign In
                     </Button>}
@@ -41,10 +46,7 @@ function TopBar({ children }) {
                 </div>}
             </div>
             {!signInOpen && children}
-            {signInOpen && <SignIn signInDone={(v) => {
-                setUsername(v);
-                setSignInOpen(false);
-            }}/>}
+            {signInOpen && <SignIn/>}
         </div>
     );
   }

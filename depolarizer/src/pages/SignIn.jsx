@@ -1,9 +1,15 @@
 import { Button, TextField } from "@mui/material"
-import { useState } from 'react'
+import { useState, useContext } from 'react'
+import { UserContext } from "../App";
+import { useNavigate } from "react-router-dom";
 
-function SignIn({signInDone}) {
+function SignIn() {
+    const navigate = useNavigate();
+
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+
+    const { setUsername: setGlobalUsername } = useContext(UserContext);
 
     return (
         <>
@@ -26,7 +32,7 @@ function SignIn({signInDone}) {
                 <div className="pt-3 ml-auto">
                     <Button
                         variant="outline"
-                        onClick={() => signInDone(null)}
+                        onClick={() => navigate(-1)}
                     >
                         Cancel
                     </Button>
@@ -34,7 +40,10 @@ function SignIn({signInDone}) {
                         variant="contained"
                         color="info"
                         disabled={(username == "") || (password == "")}
-                        onClick={() => signInDone(username)}
+                        onClick={() => {
+                            setGlobalUsername(username);
+                            navigate(-1);
+                        }}
                     >
                         Sign In
                     </Button>
