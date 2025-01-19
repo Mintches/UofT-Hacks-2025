@@ -37,13 +37,24 @@ async def create_item(item: Item):
     item_dict["_id"] = str(result.inserted_id)
     return ItemInDB(id=item_dict["_id"], **item_dict)
 
-@app.get("/items/{item_id}", response_model=ItemInDB)
+@app.get("/items_by_id/{item_id}", response_model=ItemInDB)
 async def read_item(item_id: str):
     item = await collection.find_one({"_id": ObjectId(item_id)})
     if item is None:
         raise HTTPException(status_code=404, detail="Item not found")
     item["_id"] = str(item["_id"])
     return ItemInDB(id=item["_id"], **item)
+
+@app.get("/items/{user_id}", response_model=list)
+async def read_items_by_user(user_id: str):
+    cursor = collection.find({"user_id": user_id})
+    items = await cursor.to_list(length=None)
+    ans = [-1, -1, -1, -1, -1]
+    if not items:
+        raise HTTPException(status_code=404, detail="Items not found")
+    for item in items:
+        ans[item["qNum"]-1] = item["ans"]
+    return ans
 
 if __name__ == "__main__":
     import uvicorn
