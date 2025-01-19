@@ -17,28 +17,36 @@ const Question = () => {
     "Schools should not make classroom attendance compulsory.",
     "It’s natural for children to keep some secrets from their parents.",
   ]
-  const onSubmit = (index) => {}
+  const onSubmit = (index) => {
+    setQuestionIndex(questionIndex + 1)
+  }
 
   return (
     <div className="w-full h-fit flex flex-col items-center">
-      <div className="w-fit mx-auto text-md font-sans text-slate-700 text-justify">
-        How strongly do you agree with the following.{" "}
-      </div>
-      <div className="w-full text-2xl text-center mt-2 font-sans text-slate-700">
-        {questions[questionIndex]}
-      </div>
-      <div className="flex w-fit mx-auto mt-4">
-        {opinion.map((o, index) => {
-          return (
-            <div
-              className="py-2 px-4 border-[1px] border-solid border-slate-300 text-slate-600 rounded-lg mx-2 hover:border-slate-600 hover:cursor-pointer duration-200"
-              onClick={onSubmit(index)}
-            >
-              {o}
-            </div>
-          )
-        })}
-      </div>
+      {questionIndex < questions.length ? (
+        <>
+          <div className="w-fit mx-auto text-md font-sans text-slate-400 text-justify">
+            How strongly do you agree with the following.{" "}
+          </div>
+          <div className="w-full text-2xl text-center mt-2 font-sans text-slate-300">
+            {questions[questionIndex]}
+          </div>
+          <div className="flex w-fit mx-auto mt-4">
+            {opinion.map((o, index) => {
+              return (
+                <div
+                  className="py-2 px-4 border-[1px] border-solid border-slate-300 text-slate-400 rounded-lg mx-2 hover:border-slate-600 hover:cursor-pointer duration-200"
+                  onClick={() => onSubmit(index)}
+                >
+                  {o}
+                </div>
+              )
+            })}
+          </div>{" "}
+        </>
+      ) : (
+        <div>hi</div>
+      )}
     </div>
   )
 }
