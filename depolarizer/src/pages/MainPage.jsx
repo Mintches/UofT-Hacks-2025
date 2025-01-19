@@ -6,27 +6,23 @@ import {
 } from '@mui/material';
 
 function MainPage() {
-    const signIn = () => {
-        alert("Sign In (Placeholder");
-    }
-    
     return (
-        <div className="main-page w-full">
-            <div className="flex flex-row w-full">
-                <Typography
-                    className="flex-grow-0 flex"
-                    style={{fontSize: "calc(20px + 4vmin)"}}
-                >
-                    Depolarizer
-                </Typography>
-                <Button
-                    className="ml-auto right-0"
-                    variant="contained"
-                    onClick={signIn}
-                >
-                    Sign In
-                </Button>
-            </div>
+        <div className="main-page w-full h-full">
+            <Typography style={{fontSize: 100}}>
+                This is the main page
+            </Typography>
+            <Typography style={{fontSize: 100}}>
+                This is the main page
+            </Typography>
+            <Typography style={{fontSize: 100}}>
+                This is the main page
+            </Typography>
+            <Typography style={{fontSize: 100}}>
+                This is the main page
+            </Typography>
+            <Typography style={{fontSize: 100}}>
+                This is the main page
+            </Typography>
         </div>
     );
   }

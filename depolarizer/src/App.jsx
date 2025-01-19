@@ -1,11 +1,13 @@
-import './App.css';
-import MainPage from "./pages/MainPage.jsx";
+import "./App.css"
+import Question from "./pages/Question"
+import TopBar from "./pages/TopBar"
 
 function App() {
-  
   return (
-    <MainPage />
-  );
+    <TopBar>
+      <Question />
+    </TopBar>
+  )
 }
 
-export default App;
+export default App
