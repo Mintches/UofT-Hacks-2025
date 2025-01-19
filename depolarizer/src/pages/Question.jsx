@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from "react"
+import React, { useState } from "react"
 
 const Question = () => {
   const [questionIndex, setQuestionIndex] = useState(0)
+  const [score, setScore] = useState(0)
 
   const opinion = [
     "Strongly Disagree",
@@ -19,19 +20,20 @@ const Question = () => {
     "It’s natural for children to keep some secrets from their parents.",
   ]
   const onSubmit = async (index) => {
-    await fetch('http://127.0.0.1:8000/items', {
-      method: 'POST',
+    setScore(score + index)
+    await fetch("http://127.0.0.1:8000/items", {
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json'
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify({ 
-        "user_id": "Mincy",
-        "qNum": questionIndex,
-        "ans": index
-      })
+      body: JSON.stringify({
+        user_id: "Mincy",
+        qNum: questionIndex,
+        ans: index,
+      }),
     })
-    .then(response => response.json())
-    .catch(error => console.error('Error fetching data:', error));
+      .then((response) => response.json())
+      .catch((error) => console.error("Error fetching data:", error))
     setQuestionIndex(questionIndex + 1)
   }
 
@@ -63,43 +65,75 @@ const Question = () => {
             </div>
           ) : (
             <div>
-              <div className="text-3xl my-5 ml-10">
-                AI-Powered Drones to Revolutionize Agriculture by 2030
-              </div>
-              <div className="main-page h-full mx-5">
-                In a groundbreaking development for the agriculture industry, a
-                coalition of tech companies and agronomists has unveiled a fleet
-                of AI-powered drones designed to optimize crop yields and reduce
-                environmental impact. The announcement, made at the
-                International Agri-Tech Conference in Amsterdam, has sparked
-                widespread interest among farmers, environmentalists, and
-                technologists alike. The drones, which use advanced machine
-                learning algorithms and multispectral imaging, can monitor crop
-                health, detect pests, and assess soil conditions in real time.
-                By providing actionable insights, these drones promise to reduce
-                the need for chemical pesticides and fertilizers, significantly
-                lowering costs and environmental damage. "This technology
-                represents a quantum leap for sustainable agriculture," said Dr.
-                Elena Morales, lead researcher at AgriBotics, one of the
-                companies spearheading the initiative. "We’re leveraging AI to
-                ensure that every seed and every drop of water is used as
-                efficiently as possible." Farmers participating in early trials
-                have reported remarkable results, with some noting a 30%
-                increase in crop yield and a 20% reduction in water usage.
-                However, the innovation hasn’t come without its challenges.
-                Critics warn of potential risks, including over-reliance on
-                technology and issues surrounding data privacy. "Farmers need to
-                have clear ownership and control over the data these drones
-                collect," said James Peterson, a representative of the Farmers’
-                Union. The drones are expected to hit the commercial market by
-                mid-2026, with projections estimating that over 40% of
-                large-scale farms could adopt the technology by 2030. Meanwhile,
-                policymakers are exploring ways to regulate and subsidize this
-                new wave of agricultural tech to ensure it benefits small-scale
-                farmers as much as it does large agribusinesses. "The future of
-                farming is here," Dr. Morales concluded. "And it's flying above
-                us."
-              </div>
+              {score <= 10 ? (
+                <>
+                  <div className="text-3xl my-5 ml-10">
+                    The Changing Values of Society: A Shift in Perceptions on
+                    Education, Taxation, and Responsibility
+                  </div>
+                  <div className="main-page h-full mx-5">
+                    In recent years, societal attitudes toward foundational
+                    issues like education, corporate responsibility, and
+                    taxation have undergone significant transformations. A
+                    growing segment of individuals is questioning traditional
+                    norms and embracing alternative viewpoints that challenge
+                    long-standing conventions. Water as a Commodity The
+                    commodification of basic necessities like drinking water has
+                    been both a reflection of modern society's ingenuity and a
+                    subject of criticism. Bottled water, once a luxury, has
+                    become a multibillion-dollar industry. Advocates of this
+                    shift argue that it reflects the efficiency of markets,
+                    ensuring safe drinking water is available even in areas
+                    where public infrastructure is lacking. However, critics
+                    lament the branding of water, arguing it symbolizes an
+                    erosion of collective responsibility to provide basic human
+                    needs. The Purpose of Business The debate over corporate
+                    social responsibility has also taken center stage. Many
+                    argue that a company’s primary duty is to generate profits
+                    for its shareholders. This view emphasizes economic growth
+                    and innovation, positing that profitable companies
+                    contribute to societal progress by creating jobs and
+                    stimulating markets. Opponents, however, advocate for a more
+                    holistic approach, suggesting businesses should balance
+                    profits with environmental stewardship and ethical
+                    governance.
+                  </div>
+                </>
+              ) : (
+                <>
+                  <div className="text-3xl my-5 ml-10">
+                    The Changing Values of Society: A Shift in Perceptions on
+                    Education, Taxation, and Responsibility
+                  </div>
+                  <div className="main-page h-full mx-5">
+                    In recent years, societal attitudes toward foundational
+                    issues like education, corporate responsibility, and
+                    taxation have undergone significant transformations. A
+                    growing segment of individuals is questioning traditional
+                    norms and embracing alternative viewpoints that challenge
+                    long-standing conventions. Water as a Commodity The
+                    commodification of basic necessities like drinking water has
+                    been both a reflection of modern society's ingenuity and a
+                    subject of criticism. Bottled water, once a luxury, has
+                    become a multibillion-dollar industry. Advocates of this
+                    shift argue that it reflects the efficiency of markets,
+                    ensuring safe drinking water is available even in areas
+                    where public infrastructure is lacking. However, critics
+                    lament the branding of water, arguing it symbolizes an
+                    erosion of collective responsibility to provide basic human
+                    needs. The Purpose of Business The debate over corporate
+                    social responsibility has also taken center stage. Many
+                    argue that a company’s primary duty is to generate profits
+                    for its shareholders. This view emphasizes economic growth
+                    and innovation, positing that profitable companies
+                    contribute to societal progress by creating jobs and
+                    stimulating markets. Opponents, however, advocate for a more
+                    holistic approach, suggesting businesses should balance
+                    profits with environmental stewardship and ethical
+                    governance.
+                  </div>
+                </>
+              )}
             </div>
           )}
         </div>
