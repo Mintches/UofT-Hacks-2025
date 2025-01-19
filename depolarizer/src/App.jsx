@@ -1,11 +1,11 @@
 import "./App.css"
-import Question from "./pages/Question"
+import Navigation from "./pages/Navigation"
 import TopBar from "./pages/TopBar"
 
 function App() {
   return (
     <TopBar>
-      <Question />
+      <Navigation />
     </TopBar>
   )
 }
