@@ -1,5 +1,8 @@
+import { Typography } from "@mui/material";
+
 function MainPage() {
     return (
+        
         <div className="flex flex-col main-page w-full h-full items-center justify-center pt-24">
             <div className="flex flex-row">
                 <Typography color="info" style={{fontSize: "60px"}}>
