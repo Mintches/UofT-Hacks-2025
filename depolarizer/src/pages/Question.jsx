@@ -13,10 +13,10 @@ const Question = () => {
   ]
 
   const questions = [
-    "It's a sad reflection on our society that something as basic as drinking water is now a bottled, branded consumer product.",
+    "Society should not have something as basic as drinking water be a bottled, branded consumer product.",
     "The only social responsibility of a company should be to deliver a profit to its shareholders.",
     "The rich are too highly taxed.",
-    "Schools should not make classroom attendance compulsory.",
+    "Schools should NOT make classroom attendance compulsory.",
     "It’s natural for children to keep some secrets from their parents.",
   ]
   const onSubmit = async (index) => {
@@ -65,103 +65,33 @@ const Question = () => {
             </div>
           ) : (
             <div>
-              {score <= 10 ? (
+              {score >= 15 ? (
                 <>
                   <div className="text-3xl my-5 ml-10">
-                    The Changing Values of Society: A Shift in Perceptions on
-                    Education, Taxation, and Responsibility
+                    Why the Wealthy Shouldn't Face Higher Taxes: A Case for Economic Freedom
                   </div>
-                  <div className="main-page h-full mx-5">
-                    In recent years, societal attitudes toward foundational
-                    issues like education, corporate responsibility, and
-                    taxation have undergone significant transformations. A
-                    growing segment of individuals is questioning traditional
-                    norms and embracing alternative viewpoints that challenge
-                    long-standing conventions. Water as a Commodity The
-                    commodification of basic necessities like drinking water has
-                    been both a reflection of modern society's ingenuity and a
-                    subject of criticism. Bottled water, once a luxury, has
-                    become a multibillion-dollar industry. Advocates of this
-                    shift argue that it reflects the efficiency of markets,
-                    ensuring safe drinking water is available even in areas
-                    where public infrastructure is lacking. However, critics
-                    lament the branding of water, arguing it symbolizes an
-                    erosion of collective responsibility to provide basic human
-                    needs. The Purpose of Business The debate over corporate
-                    social responsibility has also taken center stage. Many
-                    argue that a company’s primary duty is to generate profits
-                    for its shareholders. This view emphasizes economic growth
-                    and innovation, positing that profitable companies
-                    contribute to societal progress by creating jobs and
-                    stimulating markets. Opponents, however, advocate for a more
-                    holistic approach, suggesting businesses should balance
-                    profits with environmental stewardship and ethical
-                    governance.
+                  <div className="main-page h-full mx-10">
+                  The argument against taxing the rich centers on the idea that higher taxes on the wealthy can stifle innovation, entrepreneurship, and investment. Advocates believe that individuals with substantial wealth often drive economic growth by creating jobs and expanding industries. Imposing heavier taxes could discourage risk-taking and capital investment, ultimately harming the economy. Moreover, the wealthy already contribute a significant portion of tax revenues, and a more efficient tax system focused on broadening the tax base might provide a better solution than penalizing the top earners.
                   </div>
                   <img src="./tax.png" className="mx-auto mt-5 h-56 w-80"></img>
                 </>
-              ) : score <= 15 ? (
+              ) : score <= 10 ? (
                 <>
                   <div className="text-3xl my-5 ml-10">
-                    The Rise of Neutral Stances in Modern Public Opinion
+                    Panicking Over the Environment Is Unproductive: A Call for Rational Action
                   </div>
-                  <div className="main-page h-full mx-5">
-                    In an increasingly polarized world, it may come as a
-                    surprise that more individuals are adopting neutral stances
-                    on contentious social, economic, and cultural issues. This
-                    trend reflects a growing desire to avoid the extremes of
-                    heated debates and seek balanced perspectives in a society
-                    often dominated by strong opinions. Balancing Perspectives
-                    Neutrality can be seen as a pragmatic approach to questions
-                    like the commercialization of basic needs, such as bottled
-                    water. Critics argue that branding water as a premium
-                    product highlights inequalities in access to resources,
-                    while proponents emphasize the convenience and safety it
-                    provides in areas lacking clean water infrastructure. For
-                    those with a neutral stance, both points hold validity,
-                    making it difficult to lean one way or another. The Role of
-                    Corporations When it comes to corporate responsibilities,
-                    the idea that companies should focus solely on profits is
-                    often debated. Supporters view profit-driven strategies as
-                    the backbone of economic growth, while detractors call for
-                    more socially responsible business models. Neutral
-                    individuals tend to see the merit in profit-making as a
-                    means to stability while acknowledging that ethical
-                    considerations can enhance a company's reputation and
-                    societal impact.
+                  <div className="main-page h-full mx-10">
+                    While environmental concerns are valid, panicking and fostering fear can undermine progress. Alarmist rhetoric often leads to hasty, ineffective policies that may do more harm than good. Instead, focusing on data-driven solutions, technological innovation, and gradual, sustainable change will produce more lasting results. A balanced, calm approach encourages collaboration and the development of practical solutions, allowing us to address environmental challenges without the chaos and division that panic often brings.
                   </div>
                   <img src="./bottle.png" className="mx-auto mt-5 h-56 w-80"></img>
                 </>
               ) : (
                 <>
                   <div className="text-3xl my-5 ml-10">
-                    Breaking News: Global Movement Pushes for Ethical
-                    Responsibility and Progressive Policies
+                    Education Isn't the End-All, Be-All: Embracing Diverse Paths to Success
                   </div>
-                  <div className="main-page h-full mx-5">
-                    In a world increasingly shaped by economic disparity,
-                    environmental concerns, and evolving social norms, a growing
-                    movement is challenging traditional corporate practices, tax
-                    policies, and societal expectations. This wave of activism
-                    calls for prioritizing human welfare and equity over
-                    outdated economic frameworks. Ethical Responsibility Over
-                    Profit Critics of profit-centric corporate practices argue
-                    that businesses must embrace a broader role in society.
-                    Activists point to issues like climate change, labor
-                    exploitation, and community displacement as areas where
-                    companies have a duty to act responsibly. “Delivering profit
-                    to shareholders cannot come at the expense of the planet and
-                    people,” said Rebecca White, a sustainability advocate. The
-                    push for corporate social responsibility is reshaping
-                    consumer expectations, with more people choosing brands that
-                    align with ethical values. Calls for Progressive Tax Reforms
-                    The debate over taxation on the wealthy has reached a
-                    boiling point as economic inequality widens. Advocates for
-                    higher taxes on the rich contend that equitable tax policies
-                    are essential to fund education, healthcare, and
-                    infrastructure. Economists argue that progressive taxation
-                    systems not only address disparity but also boost long-term
-                    economic stability.
+                  <div className="main-page h-full mx-10">
+                    While education is undeniably important, it shouldn't be viewed as the sole determinant of success. Many individuals thrive through hands-on experience, entrepreneurship, and personal growth outside traditional academic settings. The focus should shift from a singular emphasis on formal education to recognizing the value of skills, creativity, and resilience in various fields. By embracing a broader definition of success, we can empower people to explore diverse paths and opportunities that suit their unique strengths and ambitions.
                   </div>
                   <img src="./education.png" className="mx-auto mt-5 h-56 w-80"></img>
                 </>
