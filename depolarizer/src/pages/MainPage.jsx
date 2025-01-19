@@ -7,8 +7,22 @@ import {
 
 function MainPage() {
     return (
-        <div className="main-page w-full">
-            This is the main page
+        <div className="main-page w-full h-full">
+            <Typography style={{fontSize: 100}}>
+                This is the main page
+            </Typography>
+            <Typography style={{fontSize: 100}}>
+                This is the main page
+            </Typography>
+            <Typography style={{fontSize: 100}}>
+                This is the main page
+            </Typography>
+            <Typography style={{fontSize: 100}}>
+                This is the main page
+            </Typography>
+            <Typography style={{fontSize: 100}}>
+                This is the main page
+            </Typography>
         </div>
     );
   }
