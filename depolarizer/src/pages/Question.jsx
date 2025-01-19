@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 
 const Question = () => {
   const [questionIndex, setQuestionIndex] = useState(0)
@@ -18,7 +18,20 @@ const Question = () => {
     "Schools should not make classroom attendance compulsory.",
     "It’s natural for children to keep some secrets from their parents.",
   ]
-  const onSubmit = (index) => {
+  const onSubmit = async (index) => {
+    await fetch('http://127.0.0.1:8000/items', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ 
+        "user_id": "Mincy",
+        "qNum": questionIndex,
+        "ans": index
+      })
+    })
+    .then(response => response.json())
+    .catch(error => console.error('Error fetching data:', error));
     setQuestionIndex(questionIndex + 1)
   }
 

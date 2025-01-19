@@ -1,13 +1,22 @@
 from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 from motor.motor_asyncio import AsyncIOMotorClient
 from pydantic import BaseModel
 from bson import ObjectId
 import os
-
 from dotenv import load_dotenv
+
 load_dotenv()
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # MongoDB connection
 MONGO_URI = os.getenv("MONGO_URI")
@@ -53,7 +62,7 @@ async def read_items_by_user(user_id: str):
     if not items:
         raise HTTPException(status_code=404, detail="Items not found")
     for item in items:
-        ans[item["qNum"]-1] = item["ans"]
+        ans[item["qNum"]] = item["ans"]
     return ans
 
 if __name__ == "__main__":
