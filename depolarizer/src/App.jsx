@@ -1,10 +1,13 @@
 import './App.css';
 import MainPage from "./pages/MainPage.jsx";
+import TopBar from "./pages/TopBar.jsx";
 
 function App() {
   
   return (
-    <MainPage />
+    <TopBar>
+      <MainPage />
+    </TopBar>
   );
 }
 
