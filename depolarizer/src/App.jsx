@@ -1,5 +1,5 @@
 import "./App.css"
-import Navigation from "./pages/Navigation"
+import Navigation from "./pages/PageSelector"
 import TopBar from "./pages/TopBar"
 
 function App() {

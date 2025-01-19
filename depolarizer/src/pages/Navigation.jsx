@@ -1,24 +1,23 @@
-import Question from './Question'
-import MainPage from './MainPage'
-import { Tab, Tabs } from '@mui/material'
-import { useState } from 'react'
+import ReactDOM from "react-dom/client";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import SignIn from "./SignIn"
+import MainPage from "./MainPage"
+import PageSelector from "./PageSelector"
 
 function Navigation() {
-    const [page, setPage] = useState("questions");
-
     return (
-        <div className="flex flex-col min-h-full h-full max-h-full">
-            <Tabs className="flex-shrink-0 tab-picker" value={page} onChange={(e, value) => setPage(value)}>
-                <Tab label="Survey" value="questions" />
-                <Tab label="News" value="mainpage" />
-            </Tabs>
-
-            <div className="flex flex-grow-0 flex-shrink overflow-scroll" style={{scrollbarWidth: "none"}}>
-                {(page == "questions") && <Question />}
-                {(page == "mainpage") && <MainPage />}
-            </div>
-        </div>
-    )
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path="sign-in" element={<SignIn />} />
+            <Route path="main-page" element={<MainPage />} />
+            <Route path="page-selector" element={<PageSelector />} />
+            <Route path="*" element={<Error404 />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    );
 }
 
 export default Navigation;
