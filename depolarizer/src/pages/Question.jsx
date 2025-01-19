@@ -18,7 +18,6 @@ const Question = () => {
     "It’s natural for children to keep some secrets from their parents.",
   ]
   const onSubmit = async (index) => {
-    console.log("Hi")
     await fetch('http://127.0.0.1:8000/items', {
       method: 'POST',
       headers: {
@@ -32,7 +31,6 @@ const Question = () => {
     })
     .then(response => response.json())
     .catch(error => console.error('Error fetching data:', error));
-    console.log("bye")
     setQuestionIndex(questionIndex + 1)
   }
 
