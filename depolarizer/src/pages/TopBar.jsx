@@ -1,9 +1,4 @@
-import { useState, useEffect } from 'react';
-import logo from '../logo.svg';
-import {
-    Button,
-    Typography
-} from '@mui/material';
+import { Button, Typography } from "@mui/material"
 
 function TopBar({ children }) {
     const signIn = () => {
