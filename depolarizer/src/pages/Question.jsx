@@ -98,6 +98,7 @@ const Question = () => {
                     profits with environmental stewardship and ethical
                     governance.
                   </div>
+                  <img src="./tax.png" className="mx-auto mt-5 h-56 w-80"></img>
                 </>
               ) : score <= 15 ? (
                 <>
@@ -129,6 +130,7 @@ const Question = () => {
                     considerations can enhance a company's reputation and
                     societal impact.
                   </div>
+                  <img src="./bottle.png" className="mx-auto mt-5 h-56 w-80"></img>
                 </>
               ) : (
                 <>
@@ -161,6 +163,7 @@ const Question = () => {
                     systems not only address disparity but also boost long-term
                     economic stability.
                   </div>
+                  <img src="./education.png" className="mx-auto mt-5 h-56 w-80"></img>
                 </>
               )}
             </div>
