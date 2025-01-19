@@ -24,7 +24,7 @@ const Question = () => {
 
   return (
     <div className="w-screen h-[calc(100vh-150px)] bg-slate-200 flex">
-      <div className="h-full w-20 bg-blue-500"></div>
+      <div className="h-full w-40 bg-blue-500"></div>
       <div className="flex-1 h-full flex flex-col items-center justify-around">
         <div className="h-full flex items-center">
           {questionIndex < questions.length ? (
@@ -91,7 +91,7 @@ const Question = () => {
           )}
         </div>
       </div>
-      <div className="h-full w-20 bg-red-500"></div>
+      <div className="h-full w-40 bg-red-500"></div>
     </div>
   )
 }
