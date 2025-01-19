@@ -9,13 +9,13 @@ function PageSelector() {
     return (
         <div className="flex flex-col min-h-full h-full max-h-full">
             <Tabs className="flex-shrink-0 tab-picker" value={page} onChange={(e, value) => setPage(value)}>
+                <Tab label="Home" value="mainpage" />
                 <Tab label="Survey" value="questions" />
-                <Tab label="News" value="mainpage" />
             </Tabs>
 
             <div className="flex flex-grow-0 flex-shrink overflow-scroll" style={{scrollbarWidth: "none"}}>
-                {(page == "questions") && <Question />}
                 {(page == "mainpage") && <MainPage />}
+                {(page == "questions") && <Question />}
             </div>
         </div>
     )
