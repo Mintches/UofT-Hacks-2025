@@ -1,10 +1,3 @@
-import { useState, useEffect } from 'react';
-import logo from '../logo.svg';
-import {
-    Button,
-    Typography
-} from '@mui/material';
-
 function MainPage() {
     return (
         <div className="flex flex-col main-page w-full h-full items-center justify-center pt-24">
